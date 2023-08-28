@@ -79,7 +79,7 @@ const fetchHeadlines = async () => {
 const fetchGeneralNews = async () => {
     const response = await fetch(GENERAL_NEWS+API_KEY);
     newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
+    if(response.status >=200 && response.status < 500) {
         const myJson = await response.json();
         newsDataArr = myJson.articles;
     } else {
@@ -95,7 +95,7 @@ const fetchGeneralNews = async () => {
 const fetchBusinessNews = async () => {
     const response = await fetch(BUSINESS_NEWS+API_KEY);
     newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
+    if(response.status >=200 && response.status < 500) {
         const myJson = await response.json();
         newsDataArr = myJson.articles;
     } else {
@@ -111,7 +111,7 @@ const fetchBusinessNews = async () => {
 const fetchEntertainmentNews = async () => {
     const response = await fetch(ENTERTAINMENT_NEWS+API_KEY);
     newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
+    if(response.status >=200 && response.status < 500) {
         const myJson = await response.json();
         console.log(myJson);
         newsDataArr = myJson.articles;
@@ -128,7 +128,7 @@ const fetchEntertainmentNews = async () => {
 const fetchSportsNews = async () => {
     const response = await fetch(SPORTS_NEWS+API_KEY);
     newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
+    if(response.status >=200 && response.status < 500) {
         const myJson = await response.json();
         newsDataArr = myJson.articles;
     } else {
@@ -144,7 +144,7 @@ const fetchSportsNews = async () => {
 const fetchTechnologyNews = async () => {
     const response = await fetch(TECHNOLOGY_NEWS+API_KEY);
     newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
+    if(response.status >=200 && response.status < 500) {
         const myJson = await response.json();
         newsDataArr = myJson.articles;
     } else {
@@ -164,7 +164,7 @@ const fetchQueryNews = async () => {
 
     const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
     newsDataArr = [];
-    if(response.status >= 200 && response.status < 300) {
+    if(response.status >= 200 && response.status < 500) {
         const myJson = await response.json();
         newsDataArr = myJson.articles;
     } else {
